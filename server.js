@@ -7,6 +7,7 @@ const bcrypt = require('bcrypt');
 
 const app = express();
 
+mongodb+srv: kurtesianplane:labook@labook.3w9p1gh.mongodb.net/?retryWrites=true&w=majority
 mongoose.connect('mongodb://localhost/labook', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const User = require('./public/model/users.js');
