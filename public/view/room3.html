@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Labook! • Rooms</title>
+
+        <link rel="stylesheet" href="../stylesheets/stylesroom.css">
+    </head>
+
+    <header>
+        <div class = "header-container">
+            <div class = "logo-box" alt = "LaBook!">
+                <img id = "logo" src = "../images/labook2.png">
+            </div>
+            <div class = "navi-links">
+                <ul id = "menu-options">
+                    <li><a href = "index.html" class = "redirect">Back to Home</a></li>
+                    <li> <a href="book.html" class="main-button">EDIT BOOKING</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <body>
+        <div class="container">
+            <div class="top-box">
+                    <div class="inner-box inner-1">
+                        <div class="button-container">
+                            <a href="#" id="prev-room" class="left-button">&#8249;</a> 
+                            <span id="room-label">Lab 3</span>
+                            <a href="#" id="next-room" class="right-button">&#8250;</a> 
+                        </div>
+                    </div>
+
+                    <div class="inner-box">
+                        <p id="currentDate" class ="date"></p>
+                        <script>
+                            var currentDate = new Date();
+
+                            var day = currentDate.getDate();
+                            var month = currentDate.getMonth() + 1; 
+                            var year = currentDate.getFullYear();
+                    
+                            var formattedDate = day + "/" + month + "/" + year;
+                    
+                            document.getElementById("currentDate").innerHTML = "Date:" +" " + formattedDate;
+                        </script>
+                    </div>
+                <div class = "legend-box"> 
+                    <div class="legend-item">
+                        <table border="1">
+                            <tr>
+                                <th>Time Slot</th>
+                            </tr>
+                            <tr>
+                                <td>9:00 AM - 9:30 AM</td>
+                            </tr>
+                            <tr>
+                                <td>9:30 AM - 10:00 AM</td>
+                            </tr>
+                            <tr>
+                                <td>10:30 AM - 11:00 AM</td>
+                            </tr>
+                            <tr>
+                                <td>11:00 AM - 11:30 AM</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>11:30 AM - 12:00 PM</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="legend-item">
+                        <div class="Cap">
+                            Capacity: <span id="room-capacity">45</span>
+                        </div>
+                        <div class="Cap c-1">
+                            <table border="1">
+                                <tr>
+                                    <th><div class = "stat-col l-1"></div></th>
+                                    <th>Available</th>
+                                    <th id="available-seats">32</th>
+                                </tr>
+                                <tr>
+                                    <th><div class = "stat-col l-2"></div></th>
+                                    <th>In-Use</th>
+                                    <th id="in-use-seats">8</th>
+                                </tr>
+                                <tr>
+                                    <th><div class = "stat-col l-3"></div></th>
+                                    <th>Reserved</th>
+                                    <th id="reserved-seats">5</th>
+                                </tr>
+                                <tr>
+                                    <th><div class = "stat-col l-4"></div></th>
+                                    <th>Selected</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="seat-plan"> 
+                    <br>
+                    <table border="5">
+                        <tr>
+                            <th colspan="9"><div class = "color-1"> Seats </div></th>
+
+                        </tr>
+                        <tr>
+                            <td colspan="3"><div class = "color-2">Left Column</div></td>
+                            <td colspan="3"><div class = "color-2">Center</div></td>
+                            <td colspan="3"><div class = "color-2">Right Column</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="color-3" data-seat-number="L 1" data-availability="available">L 1</div></td>
+                            <td><div class="color-3" data-seat-number="L 2" data-availability="available">L 2</div></td>
+                            <td><div class="color-3" data-seat-number="L 3" data-availability="available">L 3</div></td>
+                            <td><div class="color-3" data-seat-number="C 1" data-availability="available">C 1</div></td>
+                            <td><div class="color-3" data-seat-number="C 2" data-availability="available">C 2</div></td>
+                            <td><div class="color-3" data-seat-number="C 3" data-availability="available">C 3</div></td>
+                            <td><div class="color-3" data-seat-number="R 1" data-availability="available">R 1</div></td>
+                            <td><div class="color-3" data-seat-number="R 2" data-availability="available">R 2</div></td>
+                            <td><div class="color-3" data-seat-number="R 3" data-availability="available">R 3</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="color-3" data-seat-number="L 4" data-availability="available">L 4</div></td>
+                            <td><div class="color-3" data-seat-number="L 5" data-availability="available">L 5</div></td>
+                            <td><div class="color-3" data-seat-number="L 6" data-availability="available">L 6</div></td>
+                            <td><div class="color-3" data-seat-number="C 4" data-availability="available">C 4</div></td>
+                            <td><div class="color-3" data-seat-number="C 5" data-availability="available">C 5</div></td>
+                            <td><div class="color-3" data-seat-number="C 6" data-availability="available">C 6</div></td>
+                            <td><div class="color-3" data-seat-number="R 4" data-availability="available">R 4</div></td>
+                            <td><div class="color-3" data-seat-number="R 5" data-availability="available">R 5</div></td>
+                            <td><div class="color-3" data-seat-number="R 6" data-availability="available">R 6</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="color-3" data-seat-number="L 7" data-availability="available">L 7</div></td>
+                            <td><div class="color-3" data-seat-number="L 8" data-availability="available">L 8</div></td>
+                            <td><div class="color-3" data-seat-number="L 9" data-availability="available">L 9</div></td>
+                            <td><div class="color-3" data-seat-number="C 7" data-availability="available">C 7</div></td>
+                            <td><div class="color-3" data-seat-number="C 8" data-availability="available">C 8</div></td>
+                            <td><div class="color-3" data-seat-number="C 9" data-availability="available">C 9</div></td>
+                            <td><div class="color-3" data-seat-number="R 7" data-availability="available">R 7</div></td>
+                            <td><div class="color-3" data-seat-number="R 8" data-availability="available">R 8</div></td>
+                            <td><div class="color-3" data-seat-number="R 9" data-availability="available">R 9</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="color-3" data-seat-number="L 10" data-availability="available">L 10</div></td>
+                            <td><div class="color-3" data-seat-number="L 11" data-availability="available">L 11</div></td>
+                            <td><div class="color-3" data-seat-number="L 12" data-availability="available">L 12</div></td>
+                            <td><div class="color-3" data-seat-number="C 10" data-availability="available">C 10</div></td>
+                            <td><div class="color-3" data-seat-number="C 11" data-availability="available">C 11</div></td>
+                            <td><div class="color-3" data-seat-number="C 12" data-availability="available">C 12</div></td>
+                            <td><div class="color-3" data-seat-number="R 10" data-availability="available">R 10</div></td>
+                            <td><div class="color-3" data-seat-number="R 11" data-availability="available">R 11</div></td>
+                            <td><div class="color-3" data-seat-number="R 12" data-availability="available">R 12</div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="color-3" data-seat-number="L 13" data-availability="available">L 13</div></td>
+                            <td><div class="color-3" data-seat-number="L 14" data-availability="available">L 14</div></td>
+                            <td><div class="color-3" data-seat-number="L 15" data-availability="available">L 15</div></td>
+                            <td><div class="color-3" data-seat-number="C 13" data-availability="available">C 13</div></td>
+                            <td><div class="color-3" data-seat-number="C 14" data-availability="available">C 14</div></td>
+                            <td><div class="color-3" data-seat-number="C 15" data-availability="available">C 15</div></td>
+                            <td><div class="color-3" data-seat-number="R 13" data-availability="available">R 13</div></td>
+                            <td><div class="color-3" data-seat-number="R 14" data-availability="available">R 14</div></td>
+                            <td><div class="color-3" data-seat-number="R 15" data-availability="available">R 15</div></td>
+                        </tr>
+                    </table>
+                    <li> <a href="book.html" class="main-button">BOOK NOW!</a></li>
+                </div>
+            </div>
+        </div>
+        <script src="../controller/room.js"></script>
+    </body>
+</html>

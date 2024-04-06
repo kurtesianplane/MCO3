@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Labook! • Sign Up</title>
+    <link rel="stylesheet" href="../stylesheets/styleslogin.css">
+    <link rel="icon" href="../images/labook.png" type="image/x-icon"> 
+    <script src="https://kit.fontawesome.com/2a911b9725.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1>Sign Up</h1>
+            <form>
+                <div class="input-group">
+                    <div class="input-field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Username" id="username">
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Password" id="password">
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="Email" id="email">
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-user-tag"></i>
+                        <select id="type" required>
+                            <option value="">Select Type</option>
+                            <option value="Student">Student</option>
+                            <option value="Admin">Admin</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="error-messages" id="error-messages"></div>
+
+                <div class="btn-field">
+                    <button type="button" id="signup-button">Sign Up</button> 
+                    <button type="button"><a href="login.html">Login</a></button>
+                    <button type="button"><a href="index.html">Back</a></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../controller/signup.js"></script>
+</body>
+</html>

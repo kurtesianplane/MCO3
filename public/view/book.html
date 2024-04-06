@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Labook! • Booking</title>
+
+        <link rel="stylesheet" href="../stylesheets/stylesbook.css">
+
+        <!---- Link for Icons and Effects ----->
+        <link rel = "icon" href = "/images/labook.png" type = "image/x-icon"> 
+        <script src="https://kit.fontawesome.com/2a911b9725.js" crossorigin="anonymous"></script>
+    
+    </head>
+    <body>
+        <div class = "container">
+            <div class = "form-box">
+                <div class = "book-logo">
+                    <img id = "logo" src = "../images/labook.png">
+                </div>
+                <h1>Book</h1>
+                <form id="booking-form">
+                    <div class="input-group">
+                        <div class="input-field">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" placeholder="Username">
+                        </div>
+                        <div class="input-field">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="id-input" placeholder="ID#">
+                        </div>
+                        <div class="input-field">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="date" id="date-input" placeholder="Date">
+                        </div>
+                        <div class="drop-field">
+                            <select id="room-select">
+                                <option value="option1">--Select Room--</option>
+                                <option value="option1">Lab #1</option>
+                                <option value="option1">Lab #2</option>
+                                <option value="option1">Lab #3</option>
+                                <option value="option1">Lab #4</option>
+                                <option value="option1">Lab #5</option>
+                            </select>
+                        </div>
+                        <div class="drop-field">
+                            <select id="timeslot-select">
+                                <option value="option1">--Select Time Slot--</option>
+                                <option value="option1">9:00 AM - 9:30 AM</option>
+                                <option value="option1">9:30 AM - 10:00 AM</option>
+                                <option value="option1">10:30 AM - 11:00 PM</option>
+                                <option value="option1">11:00 AM - 11:30 AM</option>
+                                <option value="option1">11:30 AM - 12:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="drop-field">
+                            <select id="seat-select">
+                                <option value="option1">--Select Seat--</option>
+                                <option value="option1">L 1</option>
+                                <option value="option1">L 2</option>
+                                <option value="option1">L 3</option>
+                                <option value="option1">L 4</option>
+                                <option value="option1">L 5</option>
+                                <option value="option1">L 6</option>
+                                <option value="option1">L 7</option>
+                                <option value="option1">L 8</option>
+                                <option value="option1">L 9</option>
+                                <option value="option1">L 10</option>
+                                <option value="option1">L 11</option>
+                                <option value="option1">L 12</option>
+                                <option value="option1">L 13</option>
+                                <option value="option1">L 14</option>
+                                <option value="option1">L 15</option>
+                                <option value="option1">C 1</option>
+                                <option value="option1">C 2</option>
+                                <option value="option1">C 3</option>
+                                <option value="option1">C 4</option>
+                                <option value="option1">C 5</option>
+                                <option value="option1">C 6</option>
+                                <option value="option1">C 7</option>
+                                <option value="option1">C 8</option>
+                                <option value="option1">C 9</option>
+                                <option value="option1">C 10</option>
+                                <option value="option1">C 11</option>
+                                <option value="option1">C 12</option>
+                                <option value="option1">C 13</option>
+                                <option value="option1">C 14</option>
+                                <option value="option1">C 15</option>
+                                <option value="option1">R 1</option>
+                                <option value="option1">R 2</option>
+                                <option value="option1">R 3</option>
+                                <option value="option1">R 4</option>
+                                <option value="option1">R 5</option>
+                                <option value="option1">R 6</option>
+                                <option value="option1">R 7</option>
+                                <option value="option1">R 8</option>
+                                <option value="option1">R 9</option>
+                                <option value="option1">R 10</option>
+                                <option value="option1">R 11</option>
+                                <option value="option1">R 12</option>
+                                <option value="option1">R 13</option>
+                                <option value="option1">R 14</option>
+                                <option value="option1">R 15</option>
+                            </select>
+                        </div>
+                        <div class="btn-field">
+                            <button type="button" id="regular-book-button">Regular Book</button>
+                            <button id="admin-book-button" style="display: none;">Admin Book</button>
+                            <div id="login-credentials" style="display: none;"></div>
+                            <button type="button" id="back-to-room-btn">Back to Room</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="../controller/book.js"></script>
+        <script>
+            const userType = sessionStorage.getItem('userType'); // 'Student' or 'Admin'
+            
+            window.onload = function() {
+                if (userType === 'Student') {
+                    // Use the logged-in username for the student's username
+                    const username = sessionStorage.getItem('username'); // Replace with actual session storage key
+                    document.getElementById('username').value = username;
+            
+                    // Hide the 'Admin Book' button
+                    document.getElementById('admin-book-button').style.display = 'none';
+                } else if (userType === 'Admin') {
+                    // Show fields for login credentials
+                    document.getElementById('login-credentials').style.display = 'block';
+            
+                    // Show the 'Admin Book' button
+                    document.getElementById('admin-book-button').style.display = 'inline';
+                }
+            };
+            </script>            
+    </body>
+</html>

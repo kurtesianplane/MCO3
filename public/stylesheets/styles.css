@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    color: #262626;
+    font-size: 14px;
+    line-height: 30px;
+    font-family: 'Inria Sans', static;
+}
+
+h1 {
+    font-family: 'PT Sans', static;
+    letter-spacing: 1px;
+    color: #176c9d;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+body {
+    background: #dccaca;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-button {
+    padding: 15px 40px;
+    background: #176c9d;
+    font-weight: bold;
+    color: white;
+}
+
+.main-button:hover {
+    background: #0c364f;
+    transition: 0.3s;
+}
+
+header {
+    height: 10vh;
+    line-height: 10vh;
+    padding: 0 20px;
+}
+
+header img {
+    margin-top: -50px;
+    width: 200px;
+}
+
+header ul li {
+    display: inline-block;
+    text-transform: uppercase;
+    text-align-last: right;
+}
+
+header ul li a {
+    color: #000;
+    margin: 0 10px;
+    transition: 0.5s;
+}
+
+header ul li a:hover {
+    color: #176c9d;
+    margin: 0 10px;
+    transition: 0.2s;
+}
+
+.index-content {
+    height: 100vh;
+    color: #0c364f;
+}
+
+.index-content img {
+    width: 100%;
+    height: 100vh;
+}
+
+.index-content .main-text{
+    background: rgba(255, 255, 255, 0.6);
+    padding: 2%;
+    position: absolute;
+    top: 35%;
+    left: 5%;
+}
+
+.index-content .main-text h2{
+    font-size: 80px;
+    font-weight: 400;
+}
+
+.index-content .main-text p{
+    margin: 20px 0;
+}
+
+#menu-options li p {
+    color: #0c364f;
+    font-weight: bolder;
+    margin-left: 30px;
+}
+
+#menu-options li img {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+}   

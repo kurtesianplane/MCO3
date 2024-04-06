@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    color: #262626;
+    font-size:14px;
+    line-height: 18px;
+    font-family: 'Inria Sans', static;
+}
+
+h1 {
+    font-family: 'PT Sans', static;
+    letter-spacing: 1px;
+    color: #176c9d;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+body {
+    background: #dccaca;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-button {
+    padding: 15px 40px;
+    background: #176c9d;
+    font-weight: bold;
+    color: white;
+    border: bold;
+    border-radius: 2px;
+}
+
+.main-button:hover {
+    background: #0c364f;
+    transition: 0.3s;
+}
+
+header {
+    height: 10vh;
+    line-height: 10vh;
+    padding: 0 20px;
+}
+
+header img {
+    margin-top: -50px;
+    width: 200px;
+}
+
+header ul li {
+    display: inline-block;
+    text-transform: uppercase;
+    text-align-last: right;
+}
+
+header ul li a {
+    color: #000;
+    margin: 0 10px;
+    transition: 0.5s;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-box {
+    width: 750px;
+    height: 900px;
+    background-color: #f0f0f0;
+    border: 2px solid #333;
+    text-align: center;
+    line-height: 200px; 
+}
+
+.left-button,
+.right-button {
+    color: white;
+    font-size: 20px;
+    border: none;
+    padding: 10px 0px;
+    margin: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.inner-box {
+    width: 750px; 
+    height: 50px; 
+    background-color: #ccc;
+    border: 1px solid #333;
+    margin: 0px auto; 
+    line-height: 50px; 
+}
+
+.inner-1 {
+    margin-top: 0.01px;
+    background: #176c9d;
+    font-weight: bold;
+    color: white;
+}
+
+.date {
+    margin: 0; 
+    font-weight: bold;
+}
+
+.legend-box {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center; 
+    margin-top: 0px; 
+}
+
+.legend-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 375px; 
+    height: 220px; 
+    background-color: #eee;
+    border: 1px solid #999;
+    margin: 0px; 
+    line-height: 30px; 
+}
+
+.Cap{
+    margin-top: 3px;
+    padding: 1px 10px;
+    background: #176c9d;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+}
+
+.c-1{
+    color: #262626;
+    background-color: #f0f0f0;
+    margin-top: 5px;
+    padding: 10px 10px;
+}
+
+.stat-col{
+    width:  20px; 
+    height:  20px; 
+    border-radius:  50%;
+    background-color: #008000;
+    margin: auto;
+}
+
+.l-2{
+    background-color: #FFA500;
+}
+
+.l-3{
+    background-color: #FF0000;
+}
+
+.l-4{
+    background-color: #00a6ff;
+}
+
+.seat-plan {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    width: 750px;
+    height: 630px; 
+    margin: 0px; 
+    line-height: 60px;
+}
+
+.color-1{
+    background: #176c9d;
+    font-weight: bold;
+    color: white;
+}
+
+.color-2{
+    background-color: #ccc;
+    font-weight: bold;
+}
+
+.color-3{
+    background-color: #008000;
+    font-weight: bold;
+}
+
+.color-4{
+    background-color: #FFA500;
+    font-weight: bold;
+}
+
+.color-5{
+    background-color: #FF0000;
+    font-weight: bold;
+}
+
+.color-3, .color-4, .color-5 {
+    cursor: pointer;
+    position: relative;
+}
+
+.color-3:hover::after, .color-4:hover::after, .color-5:hover::after {
+    content: attr(data-seat-number) ' - ' attr(data-availability);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    white-space: nowrap;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    margin-top: 5px;
+    z-index: 1;
+}
+
+.highlighted {
+    background-color: #00a6ff; /* Change to the highlight color you want */
+}

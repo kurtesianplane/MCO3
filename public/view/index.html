@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Labook!</title>
+
+        <link rel="stylesheet" href="../stylesheets/styles.css">
+
+        <!---- Link for Icons and Effects ----->
+        <!---- 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        ----->
+        
+        <link rel = "icon" href = "../images/labook.png" type = "image/x-icon"> 
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <script>
+            window.onload = function() {
+                fetch('/login-status')
+                    .then(response => response.json())
+                    .then(data => {
+                        const menuOptions = document.getElementById('menu-options');
+                        if (data.loggedIn) {
+                            // The user is logged in, show the User Profile and Logout links
+                            menuOptions.innerHTML = `
+                                <li><a href="../view/index.html" class="redirect">Home</a></li>
+                                <li><a href="../view/userprofile.html" class="redirect">User Profile</a></li>
+                                <li><a id="logout-button" class="redirect">Logout</a></li>
+                            `;
+                            // Change the "CHECK ROOM" button link to the room page
+                            document.querySelectorAll('.main-button').forEach(button => {
+                                button.href = '../view/room1.html';  // Change this to the appropriate room page
+                            });
+        
+                            // Add event listener to the Logout button
+                            document.getElementById('logout-button').addEventListener('click', function() {
+                                fetch('/logout')
+                                    .then(function() {
+                                        window.location.href = '../view/index.html';
+                                    });
+                            });
+                        } else {
+                            // The user is not logged in, show the Login and Sign Up links
+                            menuOptions.innerHTML = `
+                                <li><a href="../view/index.html" class="redirect">Home</a></li>
+                                <li><a href="../view/login.html" class="redirect">Login</a></li>
+                                <li><a href="../view/signup.html" class="redirect">Sign Up</a></li>
+                            `;
+                            // Change the "CHECK ROOM" button link to the sign up page
+                            document.querySelectorAll('.main-button').forEach(button => {
+                                button.href = '../view/signup.html';
+                            });
+                        }
+                    });
+            };
+        </script>        
+
+        <header>
+            <div class = "header-container">
+                <div class = "logo-box" alt = "LaBook!">
+                    <img id = "logo" src = "../images/labook2.png">
+                </div>
+                <div class = "navi-links">
+                    <ul id = "menu-options">
+                        <li><a href = "index.html" class = "redirect">Home</a></li>
+                        <li><a href = "login.html" class = "redirect">Login</a></li>
+                        <li><a href = "signup.html" class = "redirect">Sign Up</a></li>
+                        <li><a href = "userprofile.html" class = "redirect">User Profile</a></li>
+                        <li></li>
+                        <li><img src = "../images/man.png"></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <br>
+
+        <script>
+            var menulist = document.getElementById('menulist');
+            menulist.style.maxHeight = "0px";
+
+            function menutoggle() {
+                if (menulist.style.maxHeight == "0px") {
+                    menulist.style.maxHeight = "100vh";
+                } else {
+                    menulist.style.maxHeight = "0px";
+                }
+            }
+        </script>
+        
+        <section class = "index-content">
+            <div class = "main-content">
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <img src = "../images/room1.jpg" alt = "">
+                        <div class = "main-text">
+                            <h2>Study? Reserve a Room!</h2>
+                            <p>
+                                Need a lab? We’ve got you covered. Find and book the best computer labs for your needs.
+                                Book a laboratory room in Gokongwei Building now with Labook.
+                            </p>
+                            <div class = "flex">
+                                <a href="../view/room1.html" class="main-button">CHECK ROOM</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src = "../images/room2.jpg" alt = "">
+                        <div class = "main-text">
+                            <h2>Study? Reserve a Room!</h2>
+                            <p>
+                                Need a lab? We’ve got you covered. Find and book the best computer labs for your needs.
+                                Book a laboratory room in Gokongwei Building now with Labook.
+                            </p>
+                            <div class = "flex">
+                                <a href="../view/room2.html" class="main-button">CHECK ROOM</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src = "../images/room3.avif" alt = "">
+                        <div class = "main-text">
+                            <h2>Study? Reserve a Room!</h2>
+                            <p>
+                                Need a lab? We’ve got you covered. Find and book the best computer labs for your needs.
+                                Book a laboratory room in Gokongwei Building now with Labook.
+                            </p>
+                            <div class = "flex">
+                                <a href="../view/room3.html" class="main-button">CHECK ROOM</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src = "../images/room4.jpg" alt = "">
+                        <div class = "main-text">
+                            <h2>Study? Reserve a Room!</h2>
+                            <p>
+                                Need a lab? We’ve got you covered. Find and book the best computer labs for your needs.
+                                Book a laboratory room in Gokongwei Building now with Labook.
+                            </p>
+                            <div class = "flex">
+                                <a href="../view/room4.html" class="main-button">CHECK ROOM</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src = "../images/room5.jpg" alt = "">
+                        <div class = "main-text">
+                            <h2>Study? Reserve a Room!</h2>
+                            <p>
+                                Need a lab? We’ve got you covered. Find and book the best computer labs for your needs.
+                                Book a laboratory room in Gokongwei Building now with Labook.
+                            </p>
+                            <div class = "flex">
+                                <a href="../view/room5.html" class="main-button">CHECK ROOM</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+        <script>
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 0,
+                nav: true,
+                dots: false,
+                navText: ["<i class = 'fa fa-chevron-left'></i>", "<i class = 'fa fa-chevron-right'></i>"],
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    768:{
+                        items:1
+                    },
+                    1000:{
+                        items:1
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

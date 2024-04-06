@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../stylesheets/userprofile.css">
+    <link rel="icon" href="../images/labook.png" type="image/x-icon">
+    <title>Labook! • User Profile</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-box" alt="LaBook!">
+                <img id="logo" src="../images/labook2.png">
+            </div>
+            <div class="navi-links">
+                <ul id="menu-options">
+                    <li><a href="index.html" class="redirect">Home</a></li>
+                    <li><a href="login.html" class="redirect">Login</a></li>
+                    <li><a href="signup.html" class="redirect">Sign Up</a></li>
+                    <li></li>
+                    <li><img src="../images/man.png" class="user-profile-pic"></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="profile-content">
+        <div class="box1">
+            <div class="left">
+                <img src="../images/man.png" alt="user" width="100">
+                <h2 id="username-display"></h2>
+                <p id="student-type-display"></p>
+                <div class ="editbutton">
+                    <p id="edit-profile-button">Edit Profile</p>
+                </div>
+            </div>
+            <div class="right">
+                <div class="info">
+                    <h3>Information</h3>
+                    <div class="info_data">
+                        <div class="data">
+                            <h4>Student Email</h4>
+                            <p id="student-email-display"></p>
+                        </div>
+                        <div class="data">
+                            <h4>Description</h4>
+                            <p id="student-description-display"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reservations">
+                    <h3>Reservations</h3>
+                    <div class="reservations_data">
+                        <div class="data">
+                            <h4>Current</h4>
+                            <div class="reservation">
+                                <p>Reservation details</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="deletebutton" id="delete-reservation-button">
+                    <p>Delete Reservation</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="otherstudents-container">
+            <div class="otherstudents">
+                <h1>Other Students</h1>
+                <div id="student-grid" class="grid-container"></div>
+            </div>
+            <div id="student-list">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div id="edit-profile-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2>Edit Profile</h2>
+            <form id="edit-profile-form">
+                <label for="edit-username">Username:</label>
+                <input type="text" id="edit-username" name="username">
+                <label for="edit-email">Email:</label>
+                <input type="email" id="edit-email" name="email">
+                <label for="edit-description">Description:</label>
+                <textarea id="edit-description" name="description"></textarea>
+                <input type="submit" value="Save Changes">
+            </form>
+        </div>
+    </div>
+    <script src="../controller/userprofile.js"></script>
+</body>
+</html>
