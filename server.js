@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt');
 
 const app = express();
 
-mongoose.connect('mongodb://localhost/labook', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://kurtesianplane:labook@labook.3w9p1gh.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const User = require('./public/model/users.js');
 const Room = require('./public/model/rooms.js');
